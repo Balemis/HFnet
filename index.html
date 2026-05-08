@@ -31,6 +31,8 @@
             padding: 40px 50px;
             margin-top: 40px;
             margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
@@ -181,12 +183,12 @@
 
         <h4> Authors </h4>
         <div class="info-box">
-            Authors list goes here.
+            Xiang Ye, Wenbin Jiang, and Jiatao Yan
         </div>
 
         <h4> Abstract </h4>
         <div class="info-box">
-            To address the strict computational and latency constraints of edge devices, we propose HFNet, a lightweight dual-channel speech enhancement framework. HFNet integrates an Aux-IVA spatial front-end with Mel-domain neural modeling to drastically reduce spectral redundancy. Furthermore, an asymmetric window configuration preserves robust spectral resolution while strictly restricting algorithmic latency to 5~ms. Experiments show HFNet-Lite (23.24K parameters, 42.57 M/s MACs) and HFNet-Base (85.86K parameters, 290.95 M/s MACs) consistently outperform existing models under different SNR conditions, while maintaining a Real-Time Factor (RTF) well below 1.0, proving their readiness for real-time edge deployment.
+            Dual-channel speech enhancement on edge devices requires a delicate balance between robust spatial modeling, low computational complexity, and minimal algorithmic latency. To address these conflicting constraints, we propose HFNet, a highly efficient and low-latency enhancement framework. The proposed method explicitly decouples spatial processing from spectral refinement by integrating an Aux-IVA spatial front-end with a Mel-domain neural network, drastically reducing spectral redundancy typically induced by long-window analysis. Furthermore, an asymmetric windowing scheme is employed to preserve high spectral resolution for spatial filtering while strictly restricting algorithmic latency to 5~ms. Experimental results demonstrate that two variants, HFNet-Lite (23.24K parameters, 42.57 M/s MACs) and HFNet-Base (85.86K parameters, 290.95 M/s MACs), consistently outperform state-of-the-art baselines across comprehensive objective metrics. Crucially, both variants maintain an end-to-end Real-Time Factor (RTF) well below 1.0 on standard CPUs, proving their readiness for real-time edge deployment.
         </div>
 
         <h4> Datasets </h4>
