@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], }, chtml: { scale: 0.9 } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Online Supplement</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script>
+        window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], }, chtml: { scale: 0.8 } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* 引入谷歌字体，提升整体质感 */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* 核心修改：加宽容器，增加阴影和内边距，告别拥挤 */
+        .container {
+            max-width: 1400px !important; 
+            background-color: #fff;
+            padding: 40px 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        header {
+            border-bottom: 2px solid #004085;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #004085;
+            font-weight: 700;
+        }
+
+        header .color_fade {
+            font-weight: 300;
+            color: #6c757d;
+        }
+
+        h4 {
+            color: #004085;
+            border-left: 5px solid #004085;
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        h5 {
+            color: #495057;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+            font-size: medium;
+        }
+
+        /* Baseline methods 链接样式化为“药丸”标签 */
+        .baseline-list {
+            padding-left: 0;
+        }
+        
+        .baseline-list li {
+            display: inline-block;
+            background-color: #e2e6ea;
+            color: #004085;
+            padding: 6px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 14px;
+            list-style-type: none;
+        }
+
+        .baseline-list li a {
+            color: #004085;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .baseline-list li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 表格美化与防挤压 */
+        .table {
+            margin-bottom: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .table thead th {
+            background-color: #004085;
+            color: #fff;
+            border-bottom: none;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table td, .table th {
+            padding: 12px 15px;
+            vertical-align: middle;
+            text-align: center;
+            border-color: #e9ecef;
+        }
+
+        /* 核心修改：强制表格第一列（Model名称）不换行 */
+        .table td:first-child {
+            white-space: nowrap; 
+            font-weight: 500;
+            color: #495057;
+        }
+
+        /* 高亮 Proposed 方法 */
+        .row-proposed td {
+            font-weight: 700 !important;
+            color: #004085 !important;
+            background-color: #f0f8ff; /* 浅蓝色背景突出显示 */
+        }
+
+        /* 优化音频播放器样式，防止缩成一团 */
+        audio {
+            width: 100%;
+            min-width: 220px; 
+            height: 40px;
+            outline: none;
+        }
+
+        /* 声谱图图片美化 */
+        .spectrogram-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .spectrogram-img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .mb-5 {
+            margin-bottom: 4rem !important; /* 增加每个区块之间的间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="paper-title">Lightweight and Low-Latency Dual Channel Speech Enhancement via Mel-Domain Modeling and Asymmetric Windows</span>
+                <br>
+                <small class="color_fade">Online Supplement</small>
+            </h1>
+        </header>
+
+        <h4> Authors </h4>
+        <div class="info-box">
+            Authors list goes here.
+        </div>
+
+        <h4> Abstract </h4>
+        <div class="info-box">
+            To address the strict computational and latency constraints of edge devices, we propose HFNet, a lightweight dual-channel speech enhancement framework. HFNet integrates an Aux-IVA spatial front-end with Mel-domain neural modeling to drastically reduce spectral redundancy. Furthermore, an asymmetric window configuration preserves robust spectral resolution while strictly restricting algorithmic latency to 5~ms. Experiments show HFNet-Lite (23.24K parameters, 42.57 M/s MACs) and HFNet-Base (85.86K parameters, 290.95 M/s MACs) consistently outperform existing models under different SNR conditions, while maintaining a Real-Time Factor (RTF) well below 1.0, proving their readiness for real-time edge deployment.
+        </div>
+
+        <h4> Datasets </h4>
+        <div class="info-box">
+            <p>
+                The simulated dual-channel datasets are constructed using the image source method.
+                Room impulse responses (RIRs) are generated for a linear two-microphone array with 4 cm spacing.
+                The training samples are generated by convolving clean single-channel speech signals with the simulated RIRs. 
+                The clean speech is drawn from the VCTK corpus which contains 11,572 training utterances and 824 test utterances. 
+                The room size is randomly sampled from $3\ \mathrm{m} \times 3\ \mathrm{m} \times 2.5\ \mathrm{m}$ to $10\ \mathrm{m} \times 10\ \mathrm{m} \times 3\ \mathrm{m}$, and the reverberation time $RT_{60}$ ranges from 0.1 s to 0.4 s. 
+                The distance between the source and the microphone array is uniformly selected between 0.5 m and 3 m, while the direction-of-arrival (DOA) difference between the target speech and the interfering noise is constrained to be greater than $5^\circ$. 
+                We convolve the clean speech signals with the generated dual-channel RIRs to obtain simulated noisy speech. 
+                The early reflections (within the first 50 ms) of the first channel are preserved as the training target. 
+                To ensure acoustic diversity, diverse stationary and highly non-stationary noises are drawn from DNS-3 dataset.
+                During training, the signal-to-noise ratio (SNR) is randomly sampled from $-5$ dB to 15 dB. 
+                The validation set follows the same SNR range and contain 500 noisy-clean pairs.  
+                For testing, we adopt the original test splits of VCTK (824 utterances).
+                The model is evaluated under three SNR conditions ($-5$ dB, $0$ dB, and $5$ dB).
+            </p>
+        </div>
+
+        <h4> Baseline methods </h4>
+        <div class="info-box">
+            <ul class="baseline-list">
+                <li><a href="https://ieeexplore.ieee.org/abstract/document/9003849" target="_blank">[FasNet]</a></li>
+                <li><a href="https://github.com/yluo42/TAC" target="_blank">[FasNet-TAC]</a></li>
+                <li><a href="https://github.com/zx1292982431/TF-SkiMNet" target="_blank">[TFSkiMNet]</a></li>
+                <li><a href="https://github.com/Max1Wz/H-GTCRN" target="_blank">[HGTCRN]</a></li>
+            </ul>
+        </div>
+        <br/>
+
+        <h4> Audio Samples (VCTK) </h4>
+
+        <h5>-5 dB (N5)</h5>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/N5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/N5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/N5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/N5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/N5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/N5/HGTCRN.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/N5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/N5/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_-5dB_table1_spectrograms.png" alt="Spectrogram VCTK -5dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h5>0 dB</h5>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/0/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/0/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/0/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/0/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/0/TFSkiMNet.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/0/HGTCRN.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/0/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/0/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_0dB_table1_spectrograms.png" alt="Spectrogram VCTK 0dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h5>5 dB</h5>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/5/HGTCRN.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/5/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_5dB_table1_spectrograms.png" alt="Spectrogram VCTK 5dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h4> Ablation Audio Samples </h4>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Variant</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>(a) Y_LMS + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/a_YLMS_IVA_SN.wav"></audio></td></tr>
+                        <tr><td>(b) Y_Re&Im + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/b_YReIm_IVA_SN.wav"></audio></td></tr>
+                        <tr><td>(c) Y_Re&Im</td><td><audio controls><source src="samples/ablation/c_YReIm.wav"></audio></td></tr>
+                        <tr><td>(d) Y_LMS + IVA-S_LMS</td><td><audio controls><source src="samples/ablation/d_YLMS_IVA_S.wav"></audio></td></tr>
+                        <tr><td>(e) Y_LMS</td><td><audio controls><source src="samples/ablation/e_YLMS.wav"></audio></td></tr>
+                        <tr><td>(f) w/o CBAM</td><td><audio controls><source src="samples/ablation/f_wo_CBAM.wav"></audio></td></tr>
+                        <tr><td>(g) w/o Mel-domain</td><td><audio controls><source src="samples/ablation/g_wo_Mel.wav"></audio></td></tr>
+                        <tr><td>(h) w/o Asymmetric</td><td><audio controls><source src="samples/ablation/h_wo_Asym.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/ablation_table2_spectrograms.png" alt="Spectrogram Ablation" class="spectrogram-img">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
