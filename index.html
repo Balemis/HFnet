@@ -183,13 +183,12 @@
 
         <h4> Authors </h4>
         <div class="info-box">
-            Xiang Ye, Wenbin Jiang, and Jiatao Yan
+            Xiang Ye, Wenbin Jiang, Jiatao Yan, and JingRui Qian
         </div>
 
         <h4> Abstract </h4>
         <div class="info-box">
-            Dual-channel speech enhancement on edge devices requires a delicate balance between robust spatial modeling, low computational complexity, and minimal algorithmic latency. To address these conflicting constraints, we propose HFNet, a highly efficient and low-latency enhancement framework. The proposed method explicitly decouples spatial processing from spectral refinement by integrating an Aux-IVA spatial front-end with a Mel-domain neural network, drastically reducing spectral redundancy typically induced by long-window analysis. Furthermore, an asymmetric windowing scheme is employed to preserve high spectral resolution for spatial filtering while strictly restricting algorithmic latency to 5~ms. Experimental results demonstrate that two variants, HFNet-Lite (23.24K parameters, 42.57 M/s MACs) and HFNet-Base (85.86K parameters, 290.95 M/s MACs), consistently outperform state-of-the-art baselines across comprehensive objective metrics. Crucially, both variants maintain an end-to-end Real-Time Factor (RTF) well below 1.0 on standard CPUs, proving their readiness for real-time edge deployment.
-        </div>
+            Dual-channel speech enhancement on edge devices requires a delicate balance between robust spatial modeling, low computational complexity, and minimal algorithmic latency. To address these conflicting constraints, we propose HFNet, a highly efficient and low-latency enhancement framework. The proposed method explicitly decouples spatial processing from spectral refinement by integrating an Aux-IVA spatial front-end with a Mel-domain neural network, drastically reducing spectral redundancy typically induced by long-window analysis. Furthermore, an asymmetric windowing scheme is employed to preserve high spectral resolution for spatial filtering while strictly restricting algorithmic latency to 5~ms. Experimental results demonstrate that two variants, HFNet-Lite (22.84K parameters, 47.61 M/s MACs) and HFNet-Base (84.58 K parameters, 288.90 M/s MACs), consistently outperform advanced baselines across comprehensive objective metrics.        </div>
 
         <h4> Datasets </h4>
         <div class="info-box">
@@ -315,14 +314,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>(a) Y_LMS + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/a_YLMS_IVA_SN.wav"></audio></td></tr>
-                        <tr><td>(b) Y_Re&Im + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/b_YReIm_IVA_SN.wav"></audio></td></tr>
-                        <tr><td>(c) Y_Re&Im</td><td><audio controls><source src="samples/ablation/c_YReIm.wav"></audio></td></tr>
-                        <tr><td>(d) Y_LMS + IVA-S_LMS</td><td><audio controls><source src="samples/ablation/d_YLMS_IVA_S.wav"></audio></td></tr>
-                        <tr><td>(e) Y_LMS</td><td><audio controls><source src="samples/ablation/e_YLMS.wav"></audio></td></tr>
-                        <tr><td>(f) w/o CBAM</td><td><audio controls><source src="samples/ablation/f_wo_CBAM.wav"></audio></td></tr>
-                        <tr><td>(g) w/o Mel-domain</td><td><audio controls><source src="samples/ablation/g_wo_Mel.wav"></audio></td></tr>
-                        <tr><td>(h) w/o Asymmetric</td><td><audio controls><source src="samples/ablation/h_wo_Asym.wav"></audio></td></tr>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/ablation/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/ablation/noisy.wav"></audio></td></tr>
+                        <tr><td>(a) Y_LMS + IVA-S_LMS</td><td><audio controls><source src="samples/ablation/a.wav"></audio></td></tr>
+                        <tr><td>(b) w/ Offline IVA-S_LMS</td><td><audio controls><source src="samples/ablation/b.wav"></audio></td></tr>
+                        <tr><td>(c) Y_Re&Im + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/c.wav"></audio></td></tr>
+                        <tr><td>(d) Y_Re&Im</td><td><audio controls><source src="samples/ablation/d.wav"></audio></td></tr>
+                        <tr><td>(e) Y_LMS + IVA-S&N_LMS</td><td><audio controls><source src="samples/ablation/e.wav"></audio></td></tr>
+                        <tr><td>(f) Y_LMS</td><td><audio controls><source src="samples/ablation/f.wav"></audio></td></tr>
+                        <tr><td>(g) w/o CBAM</td><td><audio controls><source src="samples/ablation/g.wav"></audio></td></tr>
+                        <tr><td>(h) w/o Mel-domain</td><td><audio controls><source src="samples/ablation/h.wav"></audio></td></tr>
+                        <tr><td>(i) w/o Asymmetric</td><td><audio controls><source src="samples/ablation/i.wav"></audio></td></tr>
                     </tbody>
                 </table>
             </div>
