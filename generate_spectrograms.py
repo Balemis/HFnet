@@ -25,14 +25,27 @@ MODEL_SETS = {
                 "noisy": "Noisy",
                 "FasNet": "FasNet",
                 "FasNet-TAC": "FasNet-TAC",
-                "TFSkiMNet": "TFSkiMNet",
                 "HGTCRN": "HGTCRN",
+                "NB_BLSTM": "NB_BLSTM",
+                "TFSkiMNet": "TFSkiMNet",
+                "Proposed_light": "Proposed_light",
+                "Proposed_base": "Proposed_base",
+            },
+            "Blind test": {
+                "clean": "Clean",
+                "noisy": "Noisy",
+                "FasNet": "FasNet",
+                "FaSNet-TAC": "FasNet-TAC",
+                "HGTCRN": "HGTCRN",
+                "NB_BLSTM": "NB_BLSTM",
+                "TFSkiMNet": "TFSkiMNet",
                 "Proposed_light": "Proposed_light",
                 "Proposed_base": "Proposed_base",
             },
         },
         "order": {
-            "VCTK": ["clean", "noisy", "FasNet", "FasNet-TAC", "TFSkiMNet", "HGTCRN", "Proposed_light", "Proposed_base"],
+            "VCTK": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "NB_BLSTM", "TFSkiMNet", "Proposed_light", "Proposed_base"],
+            "Blind test": ["clean", "noisy", "FasNet", "FaSNet-TAC", "HGTCRN", "NB_BLSTM", "TFSkiMNet", "Proposed_light", "Proposed_base"],
         },
     },
     # 表2：结构消融
@@ -59,9 +72,10 @@ MODEL_SETS = {
 }
 
 # 数据集和信噪比配置
-datasets = ["VCTK"]
+datasets = ["VCTK", "Blind test"]
 snr_mapping = {
     "VCTK": ["N5", "0", "5"],
+    "Blind test": [None],
 }
 snr_display = {"N5": "-5 dB", "0": "0 dB", "5": "5 dB"}
 ablation_dataset = "ablation"
@@ -182,7 +196,7 @@ def plot_spectrograms_for_condition(dataset, snr_folder, run_cfg: RunConfig):
     axes = [plt.subplot(n_rows, n_cols, i + 1) for i in range(n_rows * n_cols)]
 
     if snr_folder is None:
-        title = "Ablation"
+        title = "Ablation" if dataset == ablation_dataset else dataset
     else:
         title = f"{snr_display.get(snr_folder, snr_folder)}"
     fig.suptitle(title, fontsize=14, fontweight="bold", y=0.98)
@@ -229,7 +243,8 @@ def plot_spectrograms_for_condition(dataset, snr_folder, run_cfg: RunConfig):
 
     if run_cfg.save:
         if snr_folder is None:
-            filename = f"{dataset}_{run_cfg.model_set}_spectrograms.png"
+            dataset_safe = dataset.replace(" ", "_")
+            filename = f"{dataset_safe}_{run_cfg.model_set}_spectrograms.png"
         else:
             snr_display_str = snr_folder.replace("N5", "-5")
             filename = f"{dataset}_{snr_display_str}dB_{run_cfg.model_set}_spectrograms.png"
