@@ -63,10 +63,11 @@ MODEL_SETS = {
                 "g": "(g) w/o CBAM",
                 "h": "(h) w/o Mel-domain",
                 "i": "(i) w/o Asymmetric",
+                "j": "(j) HFNet-Base",
             },
         },
         "order": {
-            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i"],
+            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
         },
     },
 }
