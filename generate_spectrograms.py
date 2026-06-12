@@ -58,14 +58,13 @@ MODEL_SETS = {
                 "d": "(d) Y_Re&Im",
                 "e": "(e) Y_LMS + IVA-S&N_LMS",
                 "f": "(f) Y_LMS",
-                "g": "(g) w/o CBAM",
-                "h": "(h) w/o Mel-domain",
-                "i": "(i) w/o Asymmetric",
-                "j": "(j) HFNet-Base",
+                "g": "(g) w/o Mel-domain",
+                "h": "(h) w/o Asymmetric",
+                "i": "(i) HFNet-Base",
             },
         },
         "order": {
-            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i"],
         },
     },
 }
