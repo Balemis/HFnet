@@ -133,6 +133,7 @@
             white-space: nowrap; 
             font-weight: 500;
             color: #495057;
+            text-align: left;
         }
 
         /* 高亮 Proposed 方法 */
@@ -212,7 +213,9 @@
 
         <h4> Audio Samples </h4>
 
-        <h3>-5 dB</h3>
+        <h3>Under 5ms Algorithm Latency</h3>
+
+        <h4>-5 dB</h4>
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 col-md-12 mb-4">
                 <table class="table table-bordered">
@@ -223,23 +226,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/N5/clean.wav"></audio></td></tr>
-                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/N5/noisy.wav"></audio></td></tr>
-                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/N5/FasNet.wav"></audio></td></tr>
-                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/N5/FasNet-TAC.wav"></audio></td></tr>
-                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/N5/HGTCRN.wav"></audio></td></tr>
-                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/N5/TFSkiMNet.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/N5/Proposed_light.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/N5/Proposed_base.wav"></audio></td></tr>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_5ms/N5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_5ms/N5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_5ms/N5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_5ms/N5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_5ms/N5/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_5ms/N5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_5ms/N5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_5ms/N5/Proposed_base.wav"></audio></td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-lg-8 col-md-12 text-center">
-                <img src="figures/spectrograms/VCTK_-5dB_table1_spectrograms.png" alt="Spectrogram VCTK -5dB" class="spectrogram-img">
+                <img src="figures/spectrograms/VCTK_5ms_-5dB_table1_spectrograms.png" alt="Spectrogram VCTK 5ms -5dB" class="spectrogram-img">
             </div>
         </div>
 
-        <h3>0 dB</h3>
+        <h4>0 dB</h4>
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 col-md-12 mb-4">
                 <table class="table table-bordered">
@@ -250,23 +253,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/0/clean.wav"></audio></td></tr>
-                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/0/noisy.wav"></audio></td></tr>
-                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/0/FasNet.wav"></audio></td></tr>
-                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/0/FasNet-TAC.wav"></audio></td></tr>
-                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/0/HGTCRN.wav"></audio></td></tr>
-                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/0/TFSkiMNet.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/0/Proposed_light.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/0/Proposed_base.wav"></audio></td></tr>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_5ms/0/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_5ms/0/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_5ms/0/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_5ms/0/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_5ms/0/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_5ms/0/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_5ms/0/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_5ms/0/Proposed_base.wav"></audio></td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-lg-8 col-md-12 text-center">
-                <img src="figures/spectrograms/VCTK_0dB_table1_spectrograms.png" alt="Spectrogram VCTK 0dB" class="spectrogram-img">
+                <img src="figures/spectrograms/VCTK_5ms_0dB_table1_spectrograms.png" alt="Spectrogram VCTK 5ms 0dB" class="spectrogram-img">
             </div>
         </div>
 
-        <h3>5 dB</h3>
+        <h4>5 dB</h4>
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 col-md-12 mb-4">
                 <table class="table table-bordered">
@@ -277,19 +280,102 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK/5/clean.wav"></audio></td></tr>
-                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK/5/noisy.wav"></audio></td></tr>
-                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK/5/FasNet.wav"></audio></td></tr>
-                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK/5/FasNet-TAC.wav"></audio></td></tr>
-                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK/5/HGTCRN.wav"></audio></td></tr>
-                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK/5/TFSkiMNet.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK/5/Proposed_light.wav"></audio></td></tr>
-                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK/5/Proposed_base.wav"></audio></td></tr>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_5ms/5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_5ms/5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_5ms/5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_5ms/5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_5ms/5/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_5ms/5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_5ms/5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_5ms/5/Proposed_base.wav"></audio></td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-lg-8 col-md-12 text-center">
-                <img src="figures/spectrograms/VCTK_5dB_table1_spectrograms.png" alt="Spectrogram VCTK 5dB" class="spectrogram-img">
+                <img src="figures/spectrograms/VCTK_5ms_5dB_table1_spectrograms.png" alt="Spectrogram VCTK 5ms 5dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h3>Under 10ms Algorithm Latency</h3>
+
+        <h4>-5 dB</h4>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_10ms/N5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_10ms/N5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_10ms/N5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_10ms/N5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_10ms/N5/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_10ms/N5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_10ms/N5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_10ms/N5/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_10ms_-5dB_table1_spectrograms.png" alt="Spectrogram VCTK 10ms -5dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h4>0 dB</h4>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_10ms/0/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_10ms/0/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_10ms/0/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_10ms/0/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_10ms/0/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_10ms/0/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_10ms/0/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_10ms/0/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_10ms_0dB_table1_spectrograms.png" alt="Spectrogram VCTK 10ms 0dB" class="spectrogram-img">
+            </div>
+        </div>
+
+        <h4>5 dB</h4>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clean</td><td><audio controls><source src="samples/VCTK_10ms/5/clean.wav"></audio></td></tr>
+                        <tr><td>Noisy</td><td><audio controls><source src="samples/VCTK_10ms/5/noisy.wav"></audio></td></tr>
+                        <tr><td>FasNet</td><td><audio controls><source src="samples/VCTK_10ms/5/FasNet.wav"></audio></td></tr>
+                        <tr><td>FasNet-TAC</td><td><audio controls><source src="samples/VCTK_10ms/5/FasNet-TAC.wav"></audio></td></tr>
+                        <tr><td>HGTCRN</td><td><audio controls><source src="samples/VCTK_10ms/5/HGTCRN.wav"></audio></td></tr>
+                        <tr><td>TFSkiMNet</td><td><audio controls><source src="samples/VCTK_10ms/5/TFSkiMNet.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (light)</td><td><audio controls><source src="samples/VCTK_10ms/5/Proposed_light.wav"></audio></td></tr>
+                        <tr class="row-proposed"><td>Proposed (base)</td><td><audio controls><source src="samples/VCTK_10ms/5/Proposed_base.wav"></audio></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center">
+                <img src="figures/spectrograms/VCTK_10ms_5dB_table1_spectrograms.png" alt="Spectrogram VCTK 10ms 5dB" class="spectrogram-img">
             </div>
         </div>
 
@@ -320,7 +406,7 @@
             </div>
         </div>
 
-        <h4> Ablation Audio Samples </h4>
+        <h3> Ablation Audio Samples </h3>
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 col-md-12 mb-4">
                 <table class="table table-bordered">

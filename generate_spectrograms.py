@@ -20,7 +20,17 @@ MODEL_SETS = {
     # 表1：消融对比（用 Proposed 代替 HFnet）
     "table1": {
         "display_names": {
-            "VCTK": {
+            "VCTK_5ms": {
+                "clean": "Clean",
+                "noisy": "Noisy",
+                "FasNet": "FasNet",
+                "FasNet-TAC": "FasNet-TAC",
+                "HGTCRN": "HGTCRN",
+                "TFSkiMNet": "TFSkiMNet",
+                "Proposed_light": "Proposed_light",
+                "Proposed_base": "Proposed_base",
+            },
+            "VCTK_10ms": {
                 "clean": "Clean",
                 "noisy": "Noisy",
                 "FasNet": "FasNet",
@@ -42,7 +52,8 @@ MODEL_SETS = {
             },
         },
         "order": {
-            "VCTK": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
+            "VCTK_5ms": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
+            "VCTK_10ms": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
             "Blind test": ["clean", "noisy", "FasNet", "FaSNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
         },
     },
@@ -70,9 +81,10 @@ MODEL_SETS = {
 }
 
 # 数据集和信噪比配置
-datasets = ["VCTK", "Blind test"]
+datasets = ["VCTK_5ms", "VCTK_10ms", "Blind test"]
 snr_mapping = {
-    "VCTK": ["N5", "0", "5"],
+    "VCTK_5ms": ["N5", "0", "5"],
+    "VCTK_10ms": ["N5", "0", "5"],
     "Blind test": [None],
 }
 snr_display = {"N5": "-5 dB", "0": "0 dB", "5": "5 dB"}
