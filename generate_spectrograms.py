@@ -23,38 +23,38 @@ MODEL_SETS = {
             "VCTK_5ms": {
                 "clean": "Clean",
                 "noisy": "Noisy",
-                "FasNet": "FasNet",
-                "FasNet-TAC": "FasNet-TAC",
+                "FaSNet": "FaSNet",
+                "FSB-LSTM": "FSB-LSTM",
                 "HGTCRN": "HGTCRN",
-                "TFSkiMNet": "TFSkiMNet",
+                "TF-SkiMNet": "TF-SkiMNet",
                 "Proposed_light": "Proposed_light",
                 "Proposed_base": "Proposed_base",
             },
             "VCTK_10ms": {
                 "clean": "Clean",
                 "noisy": "Noisy",
-                "FasNet": "FasNet",
-                "FasNet-TAC": "FasNet-TAC",
+                "FaSNet": "FaSNet",
+                "FSB-LSTM": "FSB-LSTM",
                 "HGTCRN": "HGTCRN",
-                "TFSkiMNet": "TFSkiMNet",
+                "TF-SkiMNet": "TF-SkiMNet",
                 "Proposed_light": "Proposed_light",
                 "Proposed_base": "Proposed_base",
             },
             "Blind test": {
                 "clean": "Clean",
                 "noisy": "Noisy",
-                "FasNet": "FasNet",
-                "FaSNet-TAC": "FasNet-TAC",
+                "FaSNet": "FaSNet",
+                "FSB-LSTM": "FSB-LSTM",
                 "HGTCRN": "HGTCRN",
-                "TFSkiMNet": "TFSkiMNet",
+                "TF-SkiMNet": "TF-SkiMNet",
                 "Proposed_light": "Proposed_light",
                 "Proposed_base": "Proposed_base",
             },
         },
         "order": {
-            "VCTK_5ms": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
-            "VCTK_10ms": ["clean", "noisy", "FasNet", "FasNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
-            "Blind test": ["clean", "noisy", "FasNet", "FaSNet-TAC", "HGTCRN", "TFSkiMNet", "Proposed_light", "Proposed_base"],
+            "VCTK_5ms": ["clean", "noisy", "FaSNet", "FSB-LSTM", "HGTCRN", "TF-SkiMNet", "Proposed_light", "Proposed_base"],
+            "VCTK_10ms": ["clean", "noisy", "FaSNet", "FSB-LSTM", "HGTCRN", "TF-SkiMNet", "Proposed_light", "Proposed_base"],
+            "Blind test": ["clean", "noisy", "FaSNet", "FSB-LSTM", "HGTCRN", "TF-SkiMNet", "Proposed_light", "Proposed_base"],
         },
     },
     # 表2：结构消融
@@ -71,11 +71,12 @@ MODEL_SETS = {
                 "f": "(f) Y_LMS",
                 "g": "(g) w/o Mel-domain",
                 "h": "(h) w/o Asymmetric",
-                "i": "(i) HFNet-Base",
+                "i": "(i) w/o Spatial front-end",
+                "j": "(j) HFNet-Base",
             },
         },
         "order": {
-            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i"],
+            "ablation": ["clean", "noisy", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
         },
     },
 }
@@ -85,7 +86,7 @@ datasets = ["VCTK_5ms", "VCTK_10ms", "Blind test"]
 snr_mapping = {
     "VCTK_5ms": ["N5", "0", "5"],
     "VCTK_10ms": ["N5", "0", "5"],
-    "Blind test": [None],
+    "Blind test": ["N5", "0", "5"],
 }
 snr_display = {"N5": "-5 dB", "0": "0 dB", "5": "5 dB"}
 ablation_dataset = "ablation"
@@ -231,7 +232,7 @@ def plot_spectrograms_for_condition(dataset, snr_folder, run_cfg: RunConfig):
             ax.set_ylabel("Frequency (Hz)", fontsize=8)
             ax.tick_params(labelsize=7)
 
-            if display_name == "Proposed_light" or model_name == "a" or model_name == "Proposed_base":
+            if display_name in ("Proposed_light", "Proposed_base") or model_name == "j":
                 for spine in ax.spines.values():
                     spine.set_edgecolor("red")
                     spine.set_linewidth(2.5)
@@ -252,12 +253,12 @@ def plot_spectrograms_for_condition(dataset, snr_folder, run_cfg: RunConfig):
         cbar.set_label("Intensity (dB)", fontsize=9)
 
     if run_cfg.save:
+        dataset_safe = dataset.replace(" ", "_")
         if snr_folder is None:
-            dataset_safe = dataset.replace(" ", "_")
             filename = f"{dataset_safe}_{run_cfg.model_set}_spectrograms.png"
         else:
             snr_display_str = snr_folder.replace("N5", "-5")
-            filename = f"{dataset}_{snr_display_str}dB_{run_cfg.model_set}_spectrograms.png"
+            filename = f"{dataset_safe}_{snr_display_str}dB_{run_cfg.model_set}_spectrograms.png"
         save_path = output_dir / filename
         plt.savefig(save_path, dpi=300, bbox_inches="tight", facecolor="white")
         print(f"已保存: {save_path}")
